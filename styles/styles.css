@@ -21,19 +21,9 @@ header {
   padding: 20px;
 }
 
-/* Logo Styling */
 .logo img {
-  max-height: 100px; /* Increase the height */
+  max-height: 100px; /* Adjusted for larger logo */
   width: auto;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  padding: 20px;
 }
 
 .create-account {
@@ -49,7 +39,6 @@ header {
   background-color: #333;
   color: white;
 }
-
 
 /* Form Container Styling */
 .form-container {
@@ -117,10 +106,38 @@ header {
 /* Only Show Active Step */
 .form-step {
   display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  transform: translateX(100%); /* Off-screen initially */
 }
 
 .form-step.active {
   display: block;
+  opacity: 1;
+  transform: translateX(0); /* Bring in on-screen */
+}
+
+/* Slide Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
 }
 
 /* Form Row */
@@ -177,20 +194,4 @@ button {
 
 button:hover {
   background-color: #45a049;
-}
-
-/* Animation for Form */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.form-container {
-  animation: fadeInUp 0.6s ease-out;
 }
