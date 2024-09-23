@@ -10,11 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   nextButtons.forEach(button => {
     button.addEventListener('click', () => {
       if (validateStep(currentStep)) {
-        formSteps[currentStep].classList.remove('active');
-        progressSteps[currentStep].classList.remove('active');
+        animateStep(currentStep, currentStep + 1); // Animate to next step
         currentStep++;
-        formSteps[currentStep].classList.add('active');
-        progressSteps[currentStep].classList.add('active');
+        updateProgress();
       }
     });
   });
@@ -22,13 +20,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to go back to the previous step
   prevButtons.forEach(button => {
     button.addEventListener('click', () => {
-      formSteps[currentStep].classList.remove('active');
-      progressSteps[currentStep].classList.remove('active');
+      animateStep(currentStep, currentStep - 1); // Animate to previous step
       currentStep--;
-      formSteps[currentStep].classList.add('active');
-      progressSteps[currentStep].classList.add('active');
+      updateProgress();
     });
   });
+
+  // Animation for step transition
+  function animateStep(current, next) {
+    // Remove active class from current step and start sliding out
+    formSteps[current].classList.remove('active');
+    formSteps[current].style.animation = 'slideOut 0.5s forwards';
+    
+    // Add active class to the next step and start sliding in
+    formSteps[next].classList.add('active');
+    formSteps[next].style.animation = 'slideIn 0.5s forwards';
+  }
+
+  // Update progress bar
+  function updateProgress() {
+    progressSteps.forEach((step, index) => {
+      if (index <= currentStep) {
+        step.classList.add('active');
+      } else {
+        step.classList.remove('active');
+      }
+    });
+  }
 
   // Validate the current step's inputs
   function validateStep(step) {
