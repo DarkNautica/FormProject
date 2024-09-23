@@ -31,18 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Update progress bar (fix for highlighting active step in green)
   function updateProgress() {
     progressSteps.forEach((step, index) => {
-      const stepNumber = step.querySelector('.step-number');
-      const stepLabel = step.querySelector('.step-label');
       if (index <= currentStep) {
         step.classList.add('active');  // Highlight the current step and previous ones
-        stepNumber.style.backgroundColor = '#4CAF50'; // Turn the number green
-        stepNumber.style.color = '#fff'; // White text for step number
-        stepLabel.style.color = '#4CAF50'; // Turn the label green
       } else {
         step.classList.remove('active');  // Remove highlight from future steps
-        stepNumber.style.backgroundColor = '#f0f0f0'; // Reset the number background
-        stepNumber.style.color = '#333'; // Reset the number text
-        stepLabel.style.color = '#777'; // Reset the label color
       }
     });
   }
