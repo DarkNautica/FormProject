@@ -144,6 +144,8 @@ header {
   display: block;
 }
 
+
+
 input {
   width: 100%;
   padding: 15px;
@@ -179,6 +181,93 @@ button {
 button:hover {
   background-color: #45a049;
 }
+
+/* Add form container overflow and animation properties */
+.form-container {
+  overflow: hidden; /* Ensures the animation stays within the container */
+  position: relative;
+}
+
+/* Hide non-active steps */
+.form-step {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.form-step.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Slide-in animation for forward progress */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+/* Slide-out animation for forward progress */
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}
+
+/* Slide-in animation for reverse progress */
+@keyframes slideInReverse {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-reverse {
+  animation: slideInReverse 0.5s forwards;
+}
+
+/* Slide-out animation for reverse progress */
+@keyframes slideOutReverse {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-out-reverse {
+  animation: slideOutReverse 0.5s forwards;
+}
+
 
 /* Animation for Form Container */
 @keyframes fadeInUp {
