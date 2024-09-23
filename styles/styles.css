@@ -22,7 +22,7 @@ header {
 }
 
 .logo img {
-  max-height: 400px; /* Adjusted for larger logo */
+  max-height: 1000px; /* Adjusted for larger logo */
   width: auto;
 }
 
