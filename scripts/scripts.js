@@ -3,14 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextButtons = document.querySelectorAll('.next-step');
   const prevButtons = document.querySelectorAll('.prev-step');
   const formSteps = document.querySelectorAll('.form-step');
+  const progressSteps = document.querySelectorAll('.progress-step');
   let currentStep = 0;
 
   nextButtons.forEach(button => {
     button.addEventListener('click', () => {
       if (validateStep(currentStep)) {
         formSteps[currentStep].classList.remove('active');
+        progressSteps[currentStep].classList.remove('active');
         currentStep++;
         formSteps[currentStep].classList.add('active');
+        progressSteps[currentStep].classList.add('active');
         updateReview();
       }
     });
@@ -19,18 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   prevButtons.forEach(button => {
     button.addEventListener('click', () => {
       formSteps[currentStep].classList.remove('active');
+      progressSteps[currentStep].classList.remove('active');
       currentStep--;
       formSteps[currentStep].classList.add('active');
+      progressSteps[currentStep].classList.add('active');
     });
-  });
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert('Form submitted successfully!');
-    form.reset();
-    currentStep = 0;
-    formSteps.forEach(step => step.classList.remove('active'));
-    formSteps[0].classList.add('active');
   });
 
   function validateStep(step) {
@@ -46,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateReview() {
-    document.getElementById('reviewName').textContent = document.getElementById('name').value;
+    document.getElementById('reviewName').textContent = document.getElementById('firstName').value;
     document.getElementById('reviewEmail').textContent = document.getElementById('email').value;
     document.getElementById('reviewAddress').textContent = document.getElementById('address').value;
     document.getElementById('reviewCity').textContent = document.getElementById('city').value;
