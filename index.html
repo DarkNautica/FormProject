@@ -171,9 +171,9 @@
       nextButtons.forEach(button => {
         button.addEventListener('click', () => {
           if (validateStep(currentStep)) {
-            animateStep(currentStep, currentStep + 1); // Animate to next step
             currentStep++;
-            updateProgress();  // Update progress bar after moving to the next step
+            updateFormStep(currentStep);
+            updateProgress(currentStep);  
           }
         });
       });
@@ -181,26 +181,23 @@
       // Function to go back to the previous step
       prevButtons.forEach(button => {
         button.addEventListener('click', () => {
-          animateStep(currentStep, currentStep - 1); // Animate to previous step
           currentStep--;
-          updateProgress();  // Update progress bar after moving to the previous step
+          updateFormStep(currentStep);
+          updateProgress(currentStep);  
         });
       });
 
-      // Animation for step transition (fade-in effect)
-      function animateStep(current, next) {
-        formSteps[current].classList.remove('active'); // Remove active class from current step
-        formSteps[next].classList.add('active'); // Add active class to next step
+      // Show only the active form step
+      function updateFormStep(currentStep) {
+        formSteps.forEach((step, index) => {
+          step.classList.toggle('active', index === currentStep);  // Toggle active class
+        });
       }
 
-      // Update progress bar (fix for highlighting active step in green)
-      function updateProgress() {
+      // Update progress bar
+      function updateProgress(currentStep) {
         progressSteps.forEach((step, index) => {
-          if (index <= currentStep) {
-            step.classList.add('active');  // Highlight the current step and previous ones
-          } else {
-            step.classList.remove('active');  // Remove highlight from future steps
-          }
+          step.classList.toggle('active', index <= currentStep);  // Toggle active class for progress
         });
       }
 
@@ -211,7 +208,7 @@
         inputs.forEach(input => {
           if (!input.checkValidity()) {
             valid = false;
-            input.reportValidity(); // Show validation error
+            input.reportValidity();  // Show validation error
           }
         });
         return valid;
