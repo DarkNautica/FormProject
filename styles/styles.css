@@ -103,6 +103,15 @@ header {
   color: white;
 }
 
+/* Only Show Active Step */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
 /* Form Row */
 .form-row {
   display: flex;
