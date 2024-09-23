@@ -28,11 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Animation for step transition
   function animateStep(current, next) {
-    // Remove active class from current step and start sliding out
     formSteps[current].classList.remove('active');
     formSteps[current].style.animation = 'slideOut 0.5s forwards';
     
-    // Add active class to the next step and start sliding in
     formSteps[next].classList.add('active');
     formSteps[next].style.animation = 'slideIn 0.5s forwards';
   }
