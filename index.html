@@ -9,7 +9,6 @@
 </head>
 <body>
   <header>
-    <!-- Add logo image here -->
     <div class="logo">
       <img src="assets/images/logo.png" alt="Logo" class="logo-img">
     </div>
@@ -158,62 +157,6 @@
     </form>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('multiStepForm');
-      const nextButtons = document.querySelectorAll('.next-step');
-      const prevButtons = document.querySelectorAll('.prev-step');
-      const formSteps = document.querySelectorAll('.form-step');
-      const progressSteps = document.querySelectorAll('.progress-step');
-      let currentStep = 0;
-
-      // Function to go to the next step
-      nextButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          if (validateStep(currentStep)) {
-            currentStep++;
-            updateFormStep(currentStep);
-            updateProgress(currentStep);  
-          }
-        });
-      });
-
-      // Function to go back to the previous step
-      prevButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          currentStep--;
-          updateFormStep(currentStep);
-          updateProgress(currentStep);  
-        });
-      });
-
-      // Show only the active form step
-      function updateFormStep(currentStep) {
-        formSteps.forEach((step, index) => {
-          step.classList.toggle('active', index === currentStep);  // Toggle active class
-        });
-      }
-
-      // Update progress bar
-      function updateProgress(currentStep) {
-        progressSteps.forEach((step, index) => {
-          step.classList.toggle('active', index <= currentStep);  // Toggle active class for progress
-        });
-      }
-
-      // Validate the current step's inputs
-      function validateStep(step) {
-        const inputs = formSteps[step].querySelectorAll('input');
-        let valid = true;
-        inputs.forEach(input => {
-          if (!input.checkValidity()) {
-            valid = false;
-            input.reportValidity();  // Show validation error
-          }
-        });
-        return valid;
-      }
-    });
-  </script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
