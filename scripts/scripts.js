@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (validateStep(currentStep)) {
         animateStep(currentStep, currentStep + 1); // Animate to next step
         currentStep++;
-        updateProgress();
+        updateProgress();  // Update progress bar after moving to the next step
       }
     });
   });
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       animateStep(currentStep, currentStep - 1); // Animate to previous step
       currentStep--;
-      updateProgress();
+      updateProgress();  // Update progress bar after moving to the previous step
     });
   });
 
@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
     formSteps[next].style.animation = 'slideIn 0.5s forwards';
   }
 
-  // Update progress bar
+  // Update progress bar (fix for highlighting active step in green)
   function updateProgress() {
     progressSteps.forEach((step, index) => {
       if (index <= currentStep) {
-        step.classList.add('active');
+        step.classList.add('active');  // Highlight the current step and previous ones
       } else {
-        step.classList.remove('active');
+        step.classList.remove('active');  // Remove highlight from future steps
       }
     });
   }
