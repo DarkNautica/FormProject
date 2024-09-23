@@ -1,68 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Multi-Step Form</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
-  <header>
-    <div class="logo">Your Logo Here</div>
-    <button class="create-account">Create an account</button>
-  </header>
-
-  <div class="form-container">
-    <div class="form-header">
-      <h1>Using the Subway has never been easier!</h1>
-      <p>Complete the sign-up process and receive a QR code you can use to access the subway anywhere in the U.S.</p>
+<!-- Step 2 -->
+<div class="form-step">
+  <div class="form-progress">
+    <div class="progress-step">
+      <span class="step-number">1</span>
+      <span class="step-label">Full Name</span>
     </div>
-    
-    <form id="multiStepForm">
-      <!-- Step 1 -->
-      <div class="form-step active">
-        <div class="form-progress">
-          <div class="progress-step active">
-            <span class="step-number">1</span>
-            <span class="step-label">Full Name</span>
-          </div>
-          <div class="progress-step">
-            <span class="step-number">2</span>
-            <span class="step-label">Personal Information</span>
-          </div>
-          <div class="progress-step">
-            <span class="step-number">3</span>
-            <span class="step-label">Identification</span>
-          </div>
-          <div class="progress-step">
-            <span class="step-number">4</span>
-            <span class="step-label">Your QR Code</span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
-          </div>
-          <div class="form-group">
-            <label for="middleName">Middle Name:</label>
-            <input type="text" id="middleName" name="middleName">
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
-          </div>
-        </div>
-        <button type="button" class="next-step">Next</button>
-      </div>
-
-      <!-- Further Steps ... -->
-
-    </form>
+    <div class="progress-step active">
+      <span class="step-number">2</span>
+      <span class="step-label">Personal Information</span>
+    </div>
+    <div class="progress-step">
+      <span class="step-number">3</span>
+      <span class="step-label">Identification</span>
+    </div>
+    <div class="progress-step">
+      <span class="step-number">4</span>
+      <span class="step-label">Your QR Code</span>
+    </div>
   </div>
 
-  <script src="scripts/scripts.js"></script>
-</body>
-</html>
+  <div class="form-group">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+  </div>
+
+  <button type="button" class="prev-step">Previous</button>
+  <button type="button" class="next-step">Next</button>
+</div>
