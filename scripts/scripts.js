@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   nextButtons.forEach(button => {
     button.addEventListener('click', () => {
       if (validateStep(currentStep)) {
-        animateStep(currentStep, currentStep + 1); // Animate to next step
-        currentStep++;
-        updateProgress();  // Update progress bar after moving to the next step
+        formSteps[currentStep].classList.remove('active'); // Hide the current step
+        currentStep++; // Increment the step
+        formSteps[currentStep].classList.add('active'); // Show the next step
+        updateProgress();  // Update progress bar
       }
     });
   });
@@ -20,20 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to go back to the previous step
   prevButtons.forEach(button => {
     button.addEventListener('click', () => {
-      animateStep(currentStep, currentStep - 1); // Animate to previous step
-      currentStep--;
-      updateProgress();  // Update progress bar after moving to the previous step
+      formSteps[currentStep].classList.remove('active'); // Hide the current step
+      currentStep--; // Decrement the step
+      formSteps[currentStep].classList.add('active'); // Show the previous step
+      updateProgress();  // Update progress bar
     });
   });
-
-  // Animation for step transition
-  function animateStep(current, next) {
-    formSteps[current].classList.remove('active');
-    formSteps[current].style.animation = 'slideOut 0.5s forwards';
-    
-    formSteps[next].classList.add('active');
-    formSteps[next].style.animation = 'slideIn 0.5s forwards';
-  }
 
   // Update progress bar (fix for highlighting active step in green)
   function updateProgress() {
