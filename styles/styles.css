@@ -21,9 +21,19 @@ header {
   padding: 20px;
 }
 
+/* Logo Styling */
 .logo img {
-  max-height: 50px;
+  max-height: 100px; /* Increase the height */
   width: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
 }
 
 .create-account {
@@ -39,6 +49,7 @@ header {
   background-color: #333;
   color: white;
 }
+
 
 /* Form Container Styling */
 .form-container {
