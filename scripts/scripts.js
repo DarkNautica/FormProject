@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   nextButtons.forEach(button => {
     button.addEventListener('click', () => {
       if (validateStep(currentStep)) {
-        formSteps[currentStep].classList.remove('active'); // Hide the current step
+        formSteps[currentStep].classList.remove('active', 'slide-in'); // Remove previous active and animation class
+        formSteps[currentStep].classList.add('slide-out'); // Add slide-out animation
         currentStep++; // Increment the step
-        formSteps[currentStep].classList.add('active'); // Show the next step
+        formSteps[currentStep].classList.remove('slide-out'); // Remove any slide-out from previous transitions
+        formSteps[currentStep].classList.add('active', 'slide-in'); // Show the next step with slide-in animation
         updateProgress();  // Update progress bar
       }
     });
@@ -21,14 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to go back to the previous step
   prevButtons.forEach(button => {
     button.addEventListener('click', () => {
-      formSteps[currentStep].classList.remove('active'); // Hide the current step
+      formSteps[currentStep].classList.remove('active', 'slide-in'); // Remove previous active and animation class
+      formSteps[currentStep].classList.add('slide-out-reverse'); // Add reverse slide-out animation
       currentStep--; // Decrement the step
-      formSteps[currentStep].classList.add('active'); // Show the previous step
+      formSteps[currentStep].classList.remove('slide-out-reverse'); // Remove reverse slide-out from previous transitions
+      formSteps[currentStep].classList.add('active', 'slide-in-reverse'); // Show the previous step with slide-in-reverse animation
       updateProgress();  // Update progress bar
     });
   });
 
-  // Update progress bar (fix for highlighting active step in green)
+  // Update progress bar (highlight active steps)
   function updateProgress() {
     progressSteps.forEach((step, index) => {
       if (index <= currentStep) {
