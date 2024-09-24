@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const formSteps = document.querySelectorAll('.form-step'); // Get all form steps
   const nextButtons = document.querySelectorAll('.next-step'); // Get all Next buttons
-  const prevButtons = document.querySelectorAll('.prev-step'); // Get all Previous buttons
   const progressSteps = document.querySelectorAll('.progress-step'); // Get all progress steps
   let currentStep = 0; // Keep track of the current step
 
@@ -36,17 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentStep = formSteps.length - 1; // Prevent going past the last step
       }
       showStep(currentStep); // Show the next step
-    });
-  });
-
-  // Move to the previous step
-  prevButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      currentStep--;
-      if (currentStep < 0) {
-        currentStep = 0; // Prevent going before the first step
-      }
-      showStep(currentStep); // Show the previous step
     });
   });
 });
