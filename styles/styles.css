@@ -107,7 +107,7 @@ header {
 }
 
 .step-label {
-  font-size: 0.9rem;
+  font-size: 0.2rem;
   color: #777;
   white-space: nowrap; /* Prevent wrapping */
 }
