@@ -37,4 +37,26 @@ document.addEventListener('DOMContentLoaded', () => {
       showStep(currentStep); // Show the next step
     });
   });
+
+  // QR Code generation logic
+  const generateQRCodeButton = document.getElementById('generateQRCode');
+  generateQRCodeButton.addEventListener('click', () => {
+    // Get user input to include in the QR code
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+
+    // Combine the data to be encoded in the QR code
+    const qrData = `Name: ${firstName} ${lastName}\nEmail: ${email}`;
+
+    // Clear the previous QR code if there is one
+    document.getElementById('qrCodeContainer').innerHTML = '';
+
+    // Generate the new QR code
+    const qrcode = new QRCode(document.getElementById('qrCodeContainer'), {
+      text: qrData,
+      width: 128, // Width of the QR code
+      height: 128, // Height of the QR code
+    });
+  });
 });
