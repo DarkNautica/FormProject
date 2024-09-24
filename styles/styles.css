@@ -5,9 +5,9 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center the form vertically */
-  min-height: 100vh;
-  padding: 20px;
+  align-items: center;
+  height: 100vh;  /* Full viewport height */
+  padding: 0;
 }
 
 /* Header Section */
@@ -47,8 +47,11 @@ header {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px; /* Set a stricter width */
-  margin: 0 center; /* Center horizontally */
+  margin: 0 auto; /* Center horizontally */
   text-align: center;
+  display: flex;
+  flex-direction: column;  /* Make sure everything inside stacks vertically */
+  justify-content: center;
 }
 
 /* Adjust margins for the form header */
@@ -121,13 +124,13 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px; /* Smaller gap */
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 .form-group {
   flex: 1;
-  min-width: 45%; /* Allow the form fields to have a responsive width */
+  min-width: 45%;
   text-align: left;
 }
 
