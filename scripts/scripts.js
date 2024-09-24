@@ -22,11 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         step.classList.remove('active'); // Remove highlight from future steps
       }
     });
-
-    // Automatically generate QR code when the user reaches step 4
-    if (stepIndex === 3) { // Step 4 is index 3 (0-based index)
-      generateQRCode();
-    }
   }
 
   // Initial step display
@@ -63,4 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
       height: 128, // Height of the QR code
     });
   }
+
+  // Handle form "submission" on the Submit button click
+  const submitButton = document.getElementById('submitButton');
+  submitButton.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent actual form submission
+    generateQRCode(); // Generate the QR code on Submit
+  });
 });
