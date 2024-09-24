@@ -19,9 +19,20 @@ header {
   padding: 20px;
 }
 
-.logo img {
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
   max-height: 50px;
   width: auto;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  margin-left: 10px;
+  font-weight: 600;
 }
 
 .create-account {
@@ -165,4 +176,3 @@ button:hover {
 .form-step {
   text-align: center;
 }
-
