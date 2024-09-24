@@ -1,13 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const formSteps = document.querySelectorAll('.form-step');
-  const nextButtons = document.querySelectorAll('.next-step');
-  const prevButtons = document.querySelectorAll('.prev-step');
-  let currentStep = 0;
+  const formSteps = document.querySelectorAll('.form-step'); // Get all form steps
+  const nextButtons = document.querySelectorAll('.next-step'); // Get all Next buttons
+  const prevButtons = document.querySelectorAll('.prev-step'); // Get all Previous buttons
+  const progressSteps = document.querySelectorAll('.progress-step'); // Get all progress steps
+  let currentStep = 0; // Keep track of the current step
 
   // Function to show the current step and hide the others
   function showStep(stepIndex) {
     formSteps.forEach((step, index) => {
-      step.style.display = index === stepIndex ? 'block' : 'none';
+      if (index === stepIndex) {
+        step.classList.add('active'); // Show current step
+      } else {
+        step.classList.remove('active'); // Hide other steps
+      }
+    });
+
+    // Update progress bar
+    progressSteps.forEach((step, index) => {
+      if (index <= stepIndex) {
+        step.classList.add('active'); // Highlight steps up to the current one
+      } else {
+        step.classList.remove('active'); // Remove highlight from future steps
+      }
     });
   }
 
@@ -19,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       currentStep++;
       if (currentStep >= formSteps.length) {
-        currentStep = formSteps.length - 1;
+        currentStep = formSteps.length - 1; // Prevent going past the last step
       }
-      showStep(currentStep);
+      showStep(currentStep); // Show the next step
     });
   });
 
@@ -30,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       currentStep--;
       if (currentStep < 0) {
-        currentStep = 0;
+        currentStep = 0; // Prevent going before the first step
       }
-      showStep(currentStep);
+      showStep(currentStep); // Show the previous step
     });
   });
 });
