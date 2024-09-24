@@ -5,9 +5,9 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align to top instead of center */
   min-height: 100vh;
-  flex-direction: column;
+  padding: 20px;
 }
 
 /* Header Section */
@@ -42,12 +42,12 @@ header {
 /* Form Container Styling */
 .form-container {
   background-color: white;
-  padding: 30px;
-  border-radius: 10px;
+  padding: 40px;
+  border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 700px; /* Reduced the max width */
-  margin-top: 20px;
+  max-width: 600px; /* Set a stricter width */
+  margin: 20px auto; /* Ensure it’s centered */
   text-align: center;
 }
 
@@ -58,7 +58,7 @@ header {
 }
 
 .form-header h1 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #333;
   font-weight: 600;
   margin-bottom: 10px;
@@ -73,7 +73,7 @@ header {
 .form-progress {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .progress-step {
@@ -121,13 +121,13 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px; /* Slightly smaller gap */
+  gap: 10px; /* Smaller gap */
   margin-bottom: 20px;
 }
 
 .form-group {
   flex: 1;
-  min-width: 200px; /* Minimum width for each input */
+  min-width: 45%; /* Allow the form fields to have a responsive width */
   text-align: left;
 }
 
@@ -179,7 +179,7 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  max-width: 600px; /* Limit the size */
+  max-width: 500px; /* Limit the size of this section */
   margin-left: auto;
-  margin-right: auto; /* Center it */
+  margin-right: auto;
 }
