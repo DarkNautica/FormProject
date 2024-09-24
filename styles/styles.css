@@ -60,6 +60,9 @@ header {
   max-width: 800px;
   text-align: center;
   margin: 0 auto; /* Center horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensure everything inside is centered */
 }
 
 /* Form Header Styling */
@@ -195,6 +198,8 @@ button:hover {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  width: 100%; /* Ensure section takes full width */
+  text-align: center; /* Center content inside */
 }
 
 #qrCodeContainer {
@@ -205,5 +210,4 @@ button:hover {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px; /* Add some spacing between label and QR code */
-  text-align: center;
 }
