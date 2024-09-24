@@ -156,7 +156,6 @@ input:focus {
   outline: none;
 }
 
-
 /* Button Styling */
 button {
   display: inline-block;
@@ -187,4 +186,24 @@ button:hover {
 .form-step.active {
   display: block;
   opacity: 1;
+}
+
+/* QR Code Section - Center the QR code and label */
+#qrCodeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#qrCodeContainer {
+  margin-top: 10px; /* Add some space between the label and the QR code */
+}
+
+#qrCodeLabel {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px; /* Add some spacing between label and QR code */
+  text-align: center;
 }
