@@ -125,7 +125,7 @@ header {
 .form-row {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 30px; /* Increased gap between input boxes */
   margin-bottom: 30px;
 }
 
@@ -155,6 +155,7 @@ input:focus {
   border-color: #4CAF50;
   outline: none;
 }
+
 
 /* Button Styling */
 button {
