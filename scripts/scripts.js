@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
         step.classList.remove('active'); // Remove highlight from future steps
       }
     });
+
+    // Automatically generate QR code when the user reaches step 4
+    if (stepIndex === 3) { // Step 4 is index 3 (0-based index)
+      generateQRCode();
+    }
   }
 
   // Initial step display
@@ -38,9 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // QR Code generation logic
-  const generateQRCodeButton = document.getElementById('generateQRCode');
-  generateQRCodeButton.addEventListener('click', () => {
+  // Function to generate the QR code
+  function generateQRCode() {
     // Get user input to include in the QR code
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
@@ -58,5 +62,5 @@ document.addEventListener('DOMContentLoaded', () => {
       width: 128, // Width of the QR code
       height: 128, // Height of the QR code
     });
-  });
+  }
 });
