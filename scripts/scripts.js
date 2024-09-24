@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
       width: 128, // Width of the QR code
       height: 128, // Height of the QR code
     });
+
+    // Show the QR Code section
+    document.getElementById('qrCodeSection').style.display = 'block';
   }
 
   // Handle form "submission" on the Submit button click
