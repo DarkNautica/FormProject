@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Update progress bar
+    // Update progress bar to highlight all passed steps, including the current one
     progressSteps.forEach((step, index) => {
       if (index <= stepIndex) {
-        step.classList.add('active'); // Highlight steps up to the current one
+        step.classList.add('active'); // Highlight passed and current steps
       } else {
         step.classList.remove('active'); // Remove highlight from future steps
       }
