@@ -4,10 +4,9 @@ body {
   background-color: #f9fafb;
   margin: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;  /* Full viewport height */
-  padding: 0;
+  padding: 20px;
 }
 
 /* Header Section */
@@ -21,12 +20,12 @@ header {
 }
 
 .logo img {
-  max-height: 80px;
+  max-height: 50px;
   width: auto;
 }
 
 .create-account {
-  background-color: 333;
+  background-color: transparent;
   border: 2px solid #333;
   border-radius: 25px;
   padding: 10px 20px;
@@ -42,19 +41,16 @@ header {
 /* Form Container Styling */
 .form-container {
   background-color: white;
-  padding: 40px;
+  padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px; /* Set a stricter width */
-  margin: 0 auto; /* Center horizontally */
+  max-width: 800px;
   text-align: center;
-  display: flex;
-  flex-direction: column;  /* Make sure everything inside stacks vertically */
-  justify-content: center;
+  margin-top: 50px;
 }
 
-/* Adjust margins for the form header */
+/* Form Header Styling */
 .form-header {
   text-align: center;
   margin-bottom: 20px;
@@ -77,6 +73,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  padding: 0 20px;
 }
 
 .progress-step {
@@ -110,27 +107,16 @@ header {
   color: #4CAF50;
 }
 
-/* Form Steps */
-.form-step {
-  display: none;
-}
-
-.form-step.active {
-  display: block;
-}
-
 /* Form Fields */
 .form-row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 20px; /* Space between the input fields */
+  margin-bottom: 30px;
 }
 
 .form-group {
   flex: 1;
-  min-width: 45%;
   text-align: left;
 }
 
@@ -159,14 +145,14 @@ input:focus {
 /* Button Styling */
 button {
   display: inline-block;
-  width: 130px;
-  padding: 10px;
+  width: 150px;
+  padding: 12px;
   background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
@@ -175,14 +161,8 @@ button:hover {
   background-color: #45a049;
 }
 
-/* Fix the "Using the Subway has never been easier" box */
-.form-header {
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+/* Centering Next Button */
+.form-step {
+  text-align: center;
 }
+
