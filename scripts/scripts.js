@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to generate the QR code
   function generateQRCode() {
     // Get user input to include in the QR code
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const email = document.getElementById('email').value;
+    const firstName = document.getElementById('firstName').value || 'First Name';
+    const lastName = document.getElementById('lastName').value || 'Last Name';
+    const email = document.getElementById('email').value || 'Email';
 
     // Combine the data to be encoded in the QR code
     const qrData = `Name: ${firstName} ${lastName}\nEmail: ${email}`;
