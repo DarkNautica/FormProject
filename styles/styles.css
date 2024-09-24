@@ -6,7 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Vertical centering */
+  justify-content: center;
   height: 100vh;
 }
 
@@ -87,8 +87,8 @@ header {
   display: flex;
   justify-content: space-between;
   max-width: 700px;
-  margin: 0 auto 60px; /* Increased margin below progress bar for more space */
-  gap: 30px; /* Added gap between steps */
+  margin: 0 auto 60px;
+  gap: 30px;
 }
 
 .progress-step {
@@ -188,9 +188,21 @@ button:hover {
   transition: opacity 0.5s ease-in-out;
 }
 
+/* Active form step */
 .form-step.active {
   display: block;
   opacity: 1;
+  animation: fadeIn 0.5s ease-in-out; /* Apply fade-in animation */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* QR Code Section */
@@ -201,12 +213,12 @@ button:hover {
   align-items: center;
   margin-top: 40px;
   text-align: center;
-  width: 100%; /* Ensure it takes the full width */
+  width: 100%;
 }
 
 #qrCodeContainer {
-  margin: 0 auto; /* Center the QR code */
-  margin-top: 15px; /* Added more space between the label and QR code */
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
 #qrCodeLabel {
