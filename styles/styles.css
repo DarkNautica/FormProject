@@ -47,7 +47,7 @@ header {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px; /* Set a stricter width */
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 center; /* Center horizontally */
   text-align: center;
 }
 
