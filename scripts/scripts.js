@@ -1,6 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<script>
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript is loaded'); // Debugging message to ensure script is running
 
@@ -68,4 +65,3 @@ document.addEventListener('DOMContentLoaded', () => {
     generateQRCode();
   });
 });
-</script>
