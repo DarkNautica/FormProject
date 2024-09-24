@@ -1,4 +1,9 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> <!-- QRCode.js -->
+
+<script>
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('JavaScript is loaded'); // Debugging message to ensure script is running
+
   const formSteps = document.querySelectorAll('.form-step'); // Get all form steps
   const nextButtons = document.querySelectorAll('.next-step'); // Get all Next buttons
   const progressSteps = document.querySelectorAll('.progress-step'); // Get all progress steps
@@ -76,3 +81,4 @@ document.addEventListener('DOMContentLoaded', () => {
     generateQRCode(); // Generate the QR code on Submit
   });
 });
+</script>
