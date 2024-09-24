@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Multi-Step Form</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
   <header>
     <div class="logo">
       <img src="assets/logo.png" alt="Logo" class="logo-img">
-      <span class="logo-text">GREENLABS</span>
+      <span class="logo-text">GREENLABS</span> <!-- Changed to GREENLABS -->
     </div>
     <button class="create-account">Create an account</button>
   </header>
@@ -21,10 +21,11 @@
       <h1>Using the Subway has never been easier!</h1>
       <p>Complete the sign-up process and receive a QR code you can use to access the subway anywhere in the U.S.</p>
     </div>
-    
+
     <form id="multiStepForm">
+      
       <!-- Step 1 -->
-      <div class="form-step active">
+      <div class="form-step active"> <!-- First step is active by default -->
         <div class="form-progress">
           <div class="progress-step active">
             <span class="step-number">1</span>
@@ -90,8 +91,7 @@
           <label for="phone">Phone Number:</label>
           <input type="tel" id="phone" name="phone" required>
         </div>
-        <button type="button" class="prev-step">Previous</button>
-        <button type="button" class="next-step">Next</button>
+        <button type="button" class="next-step">Next</button> <!-- No Previous button -->
       </div>
 
       <!-- Step 3 -->
@@ -123,8 +123,7 @@
           <label for="idType">Identification Type:</label>
           <input type="text" id="idType" name="idType" required>
         </div>
-        <button type="button" class="prev-step">Previous</button>
-        <button type="button" class="next-step">Next</button>
+        <button type="button" class="next-step">Next</button> <!-- No Previous button -->
       </div>
 
       <!-- Step 4 -->
@@ -152,8 +151,7 @@
           <label>Your QR Code:</label>
           <p>QR Code will be generated here after submission.</p>
         </div>
-        <button type="button" class="prev-step">Previous</button>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button> <!-- Submit button for the final step -->
       </div>
     </form>
   </div>
