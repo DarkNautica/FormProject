@@ -37,7 +37,7 @@ header {
 }
 
 .create-account {
-  background-color: #4CAF50;
+  background-color: #333;
   border: 2px solid #333;
   border-radius: 25px;
   padding: 10px 20px;
@@ -53,7 +53,7 @@ header {
 /* Form Container Styling */
 .form-container {
   background-color: white;
-  padding: 50px;
+  padding: 60px; /* Increased padding for breathing room */
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -62,13 +62,13 @@ header {
   margin: 0 auto; /* Center horizontally */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensure everything inside is centered */
+  align-items: center;
 }
 
 /* Form Header Styling */
 .form-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px; /* More space between header and progress bar */
 }
 
 .form-header h1 {
@@ -86,8 +86,8 @@ header {
 .form-progress {
   display: flex;
   justify-content: space-between;
-  max-width: 700px; /* Set a reasonable width for the progress bar */
-  margin: 0 auto 40px; /* Center progress bar */
+  max-width: 700px;
+  margin: 0 auto 50px; /* Added more margin below the progress bar */
 }
 
 .progress-step {
@@ -100,11 +100,11 @@ header {
   display: inline-block;
   background-color: #f0f0f0;
   color: #333;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 50px; /* Increased the size for better visibility */
+  height: 50px;
+  line-height: 50px;
   border-radius: 50%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
@@ -129,7 +129,7 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 60px; /* Increased gap between input boxes */
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .form-group {
@@ -138,10 +138,10 @@ header {
 }
 
 .form-group label {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #333;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: block;
 }
 
@@ -163,7 +163,7 @@ input:focus {
 button {
   display: inline-block;
   width: 150px;
-  padding: 12px;
+  padding: 15px;
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -172,6 +172,7 @@ button {
   font-size: 1.1rem;
   font-weight: 600;
   transition: background-color 0.3s ease;
+  margin-top: 30px; /* Added space above buttons */
 }
 
 button:hover {
@@ -191,23 +192,22 @@ button:hover {
   opacity: 1;
 }
 
-/* QR Code Section - Center the QR code and label */
+/* QR Code Section */
 #qrCodeSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  width: 100%; /* Ensure section takes full width */
-  text-align: center; /* Center content inside */
+  margin-top: 40px; /* Added margin to push the QR code down */
 }
 
 #qrCodeContainer {
-  margin-top: 10px; /* Add some space between the label and the QR code */
+  margin-top: 15px; /* Added more space between the label and QR code */
 }
 
 #qrCodeLabel {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px; /* Add some spacing between label and QR code */
+  margin-bottom: 20px; /* Added spacing between label and QR code */
+  text-align: center;
 }
