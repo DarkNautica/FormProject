@@ -91,15 +91,16 @@
       </div>
 
       <!-- Step 4 -->
-      <div class="form-step">
-        <div class="form-group">
-          <label>Your QR Code:</label>
-          <p>QR Code will be generated here after submission.</p>
-        </div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+  <div class="form-step">
+    <div class="form-group">
+      <label>Your QR Code:</label>
+      <p>Click the button below to generate your QR Code.</p>
+      <button type="button" id="generateQRCode">Generate QR Code</button>
+      <div id="qrCodeContainer" style="margin-top: 20px;"></div> <!-- QR Code will be displayed here -->
+    </div>
+    <button type="submit">Submit</button>
   </div>
+
 
   <script src="scripts/scripts.js"></script> <!-- Ensure the correct path for JS -->
 </body>
