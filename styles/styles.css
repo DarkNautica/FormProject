@@ -35,11 +35,6 @@ header {
   font-weight: 600;
 }
 
-/* Change Sub.way to GREENLABS */
-.logo-text {
-  content: 'GREENLABS';
-}
-
 .create-account {
   background-color: transparent;
   border: 2px solid #333;
@@ -95,6 +90,7 @@ header {
 .progress-step {
   text-align: center;
   flex: 1;
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 .step-number {
@@ -113,8 +109,10 @@ header {
 .step-label {
   font-size: 0.9rem;
   color: #777;
+  white-space: nowrap; /* Prevent wrapping */
 }
 
+/* Active Step Styling */
 .progress-step.active .step-number {
   background-color: #4CAF50; /* Green background for active step */
   color: white;
@@ -123,7 +121,6 @@ header {
 .progress-step.active .step-label {
   color: #4CAF50; /* Green text for active step */
 }
-
 
 /* Form Fields */
 .form-row {
@@ -179,16 +176,18 @@ button:hover {
   background-color: #45a049;
 }
 
-/* Form Steps: Show one step at a time */
+/* Form Steps */
 .form-step {
-  display: none; /* Hide all steps by default */
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .form-step.active {
-  display: block; /* Show only the active step */
-}
-
-/* Centering Next/Previous Button */
-.form-step {
-  text-align: center;
+  display: block;
+  opacity: 1;
 }
