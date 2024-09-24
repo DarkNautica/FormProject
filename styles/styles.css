@@ -5,9 +5,8 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centering content vertically */
   align-items: center;
-  height: 100vh; /* Set full height for vertical centering */
+  padding: 20px;
 }
 
 /* Header Section */
@@ -59,9 +58,7 @@ header {
   width: 100%;
   max-width: 800px;
   text-align: center;
-  margin: 0 auto; /* Center form container horizontally */
-  position: relative;
-  top: 20px;
+  margin-top: 50px;
 }
 
 /* Form Header Styling */
@@ -86,15 +83,14 @@ header {
 .form-progress {
   display: flex;
   justify-content: space-between;
-  max-width: 600px; /* Set a fixed width for the progress bar */
-  margin: 0 auto 30px auto; /* Center progress bar */
-  padding: 0 10px;
+  margin-bottom: 30px;
+  padding: 0 20px;
 }
 
 .progress-step {
   text-align: center;
   flex: 1;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 .step-number {
@@ -107,15 +103,13 @@ header {
   border-radius: 50%;
   margin-bottom: 5px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .step-label {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #777;
-  white-space: nowrap;
-  display: block;
-  text-align: center;
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 /* Active Step Styling */
@@ -186,7 +180,7 @@ button:hover {
 .form-step {
   display: none;
   opacity: 0;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
