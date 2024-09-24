@@ -5,7 +5,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align to top instead of center */
+  align-items: center; /* Center the form vertically */
   min-height: 100vh;
   padding: 20px;
 }
@@ -47,7 +47,7 @@ header {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px; /* Set a stricter width */
-  margin: 20px auto; /* Ensure it’s centered */
+  margin: 0 auto; /* Center horizontally */
   text-align: center;
 }
 
@@ -179,7 +179,7 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  max-width: 500px; /* Limit the size of this section */
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
