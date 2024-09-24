@@ -82,9 +82,9 @@ header {
 /* Progress Bar */
 .form-progress {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around; /* Adjust spacing between steps */
   margin-bottom: 30px;
-  padding: 0 20px;
+  padding: 0 10px; /* Reduce padding */
 }
 
 .progress-step {
@@ -103,13 +103,15 @@ header {
   border-radius: 50%;
   margin-bottom: 5px;
   font-weight: 600;
-  transition: background-color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease;
 }
 
 .step-label {
-  font-size: 0.2rem;
+  font-size: 0.8rem; /* Reduce font size slightly */
   color: #777;
   white-space: nowrap; /* Prevent wrapping */
+  display: block;
+  text-align: center;
 }
 
 /* Active Step Styling */
