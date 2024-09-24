@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to generate the QR code
   function generateQRCode() {
+    console.log('QR Code generation initiated'); // Debugging message
+
     // Get user input to include in the QR code
     const firstName = document.getElementById('firstName').value || 'First Name';
     const lastName = document.getElementById('lastName').value || 'Last Name';
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Combine the data to be encoded in the QR code
     const qrData = `Name: ${firstName} ${lastName}\nEmail: ${email}`;
+    console.log('QR Code data:', qrData); // Debugging message
 
     // Clear the previous QR code if there is one
     document.getElementById('qrCodeContainer').innerHTML = '';
@@ -58,14 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
       height: 128, // Height of the QR code
     });
 
+    console.log('QR Code generated'); // Debugging message
+
     // Show the QR Code section
     document.getElementById('qrCodeSection').style.display = 'block';
+    console.log('QR Code section is now visible'); // Debugging message
   }
 
   // Handle form "submission" on the Submit button click
   const submitButton = document.getElementById('submitButton');
   submitButton.addEventListener('click', (e) => {
     e.preventDefault(); // Prevent actual form submission
+    console.log('Submit button clicked'); // Debugging message
     generateQRCode(); // Generate the QR code on Submit
   });
 });
