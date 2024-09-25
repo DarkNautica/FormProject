@@ -43,8 +43,13 @@
         const messageElement = document.getElementById('signupError');
 
         if (response.ok) {
-          messageElement.textContent = 'Account created successfully!';
+          messageElement.textContent = 'Account created successfully! Redirecting to login...';
           messageElement.style.color = 'green';
+
+          // Redirect to login page after 2 seconds
+          setTimeout(() => {
+            window.location.href = 'login.html'; // Change this to the correct path to your login page
+          }, 2000);
         } else {
           const errorText = await response.text();
           messageElement.textContent = errorText;
