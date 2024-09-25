@@ -23,7 +23,7 @@
       <p>Complete the sign-up process and receive a QR code you can use to access GREENLABS in the U.S.</p>
     </div>
 
-    <!-- Define the progress bar only once -->
+    <!-- Define the progress bar -->
     <div class="form-progress">
       <div class="progress-step">
         <span class="step-number">1</span>
@@ -44,9 +44,8 @@
     </div>
 
     <form id="multiStepForm">
-      
       <!-- Step 1 -->
-      <div class="form-step active"> <!-- First step is active by default -->
+      <div class="form-step active">
         <div class="form-row">
           <div class="form-group">
             <label for="firstName">First Name:</label>
@@ -90,16 +89,13 @@
         <button type="button" class="next-step">Next</button>
       </div>
 
-   <!-- Step 4 -->
-<div class="form-step">
-  <div class="form-group" id="qrCodeSection" style="display: none;"> <!-- Hidden by default -->
-    <label id="qrCodeLabel">Your QR Code:</label>
-    <div id="qrCodeContainer" style="margin-top: 20px;"></div> <!-- QR Code will be displayed here -->
+      <!-- Step 4 (QR Code) -->
+      <div class="form-step">
+        <div class="form-group" id="qrCodeSection" style="display: none;">
+          <label id="qrCodeLabel">Your QR Code:</label>
+          <div id="qrCodeContainer" style="margin-top: 20px;"></div>
+        </div>
+        <button type="button" id="submitButton">Submit</button>
+      </div>
+    </form>
   </div>
-  <button type="button" id="submitButton">Submit</button> <!-- Use type 'button' to prevent form submission -->
-</div>
-
-      <script src="scripts/scripts.js"></script>
-      
-</body>
-</html>
