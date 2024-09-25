@@ -3,50 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup Page</title>
+  <title>Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <div id="signupModal">
-    <div>
-      <h2>Create an Account</h2>
-      <form id="signupForm">
+  <div class="form-container">
+    <h1>Create an Account</h1>
+    <form id="signupForm">
+      <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <button type="submit">Create Account</button>
-      </form>
-      <p id="signupError" style="color:red;"></p>
-    </div>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Create Account</button>
+      <p id="signupError" style="color: red;"></p>
+    </form>
   </div>
 
   <script>
-    document.getElementById('signupForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form submission
+    document.getElementById('signupForm').addEventListener('submit', async function(e) {
+      e.preventDefault(); // Prevent the form from submitting the default way
 
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      fetch('http://localhost:3000/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      })
-      .then(response => {
+      try {
+        const response = await fetch('http://localhost:3000/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const messageElement = document.getElementById('signupError');
+
         if (response.ok) {
-          return response.text();
+          messageElement.textContent = 'Account created successfully!';
+          messageElement.style.color = 'green';
         } else {
-          throw new Error('Signup failed');
+          const errorText = await response.text();
+          messageElement.textContent = errorText;
+          messageElement.style.color = 'red';
         }
-      })
-      .then(data => {
-        alert(data); // Show success message
-      })
-      .catch(error => {
-        document.getElementById('signupError').innerText = error.message;
-      });
+      } catch (error) {
+        document.getElementById('signupError').innerText = 'Error during signup. Please try again.';
+      }
     });
   </script>
 </body>
