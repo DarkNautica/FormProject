@@ -67,6 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Redirect to signup.html on Create Account click
   document.querySelector('.create-account').addEventListener('click', function() {
-    window.location.href = 'https://YOUR_GITHUB_USERNAME.github.io/REPO_NAME/signup.html';
+    window.location.href = 'https://DarkNautica.github.io/FormProject/signup.html';
   });
 });
